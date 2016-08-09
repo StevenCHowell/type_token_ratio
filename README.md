@@ -74,7 +74,7 @@ For those using Mac OS X that may be unfamiliar with using a unix terminal, thes
     2. Type in the desired file name.
     3. Select the down arrow next to the file name box to choose to places the file on the **Desktop**.  
     4. In the **File Format** drop down menu select the **Comma Separated Values (.csv)** option.
-3. Save a copy of [`type_token_ratio.py`](https://raw.githubusercontent.com/stvn66/type_token_ratio/master/type_token_ratio.py) to your **Desktop** (you can download this file by right clicking [here](https://raw.githubusercontent.com/stvn66/type_token_ratio/master/type_token_ratio.py) and selection **save as**).
+3. Save a copy of [`type_token_ratio.py`](https://raw.githubusercontent.com/stvn66/type_token_ratio/master/type_token_ratio.py) to your **Desktop** (you can download this file by right clicking [here](https://raw.githubusercontent.com/stvn66/type_token_ratio/master/type_token_ratio.py), selecting **save as**, then chosing to save it to the **Desktop**).
 4.  On your Mac, open up **Launchpad**, then choose the **Utilities** menu, and run the **Terminal** program (which has an icon similar to a TV screen).
 5. In the screen that opens, type the command `cd` and press `Enter`.
 6. Type the command `cd Desktop/` and press `Enter`.
