@@ -5,39 +5,84 @@
 
 
 ## Running this application
-To calculate the Type-Token Ratio for a word sample saved with the filename `sample_utterances.csv` will be:
+### Input
+The command to calculate the Type-Token Ratio for a word sample saved with the filename `sample_utterances.csv` will be:
 ```
-user@my_mac:~$ python ~/path/to/type_token_ratio.py ~/path/to/sample_utterances.csv
+~/path/to/type_token_ratio.py ~/path/to/sample_utterances.csv
 ```
-The output will have the following information:
+
+### Command line output
+The corresponding output will be:
 ```
-Counter({'chicken': 3, 'good': 2, 'ate': 1, 'for': 1, 'i': 1, 'is': 1, 'the': 1})
+================================================================================
+ Copyright (C) 2013 Steven C. Howell
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+================================================================================
+
+Counter({'chicken': 3, 'good': 2, 'ate': 1, 'for': 1, 'i': 1, 'is': 1, 'the': 1}) 
 
 unique words:     ['ate', 'for', 'i', 'is', 'good', 'chicken', 'the'] 
+
 
 total utterances: 3
 total words:      10
 unique words:     7
 unique/total:     0.7
-output saved to:  sample_utterances.out
+output saved to: sample_utterances.out
 ```
 
-### Intro Example (Mac OS X specific): 
+### Output File
+
+Additionally a text file containing the results will be created in the same directory.  The file name for this output file will match the input file but with the extension changed to `.out`.  For this example, the output file will be called `sample_utterances.out`.  The contents of this file will have the following format:
+```
+Type-Token Ratio: 0.7
+total utterances: 3
+total words:      10
+unique words:     7
+1	 ate
+1	 for
+1	 i
+1	 is
+2	 good
+3	 chicken
+1	 the
+
+
+Counter({'chicken': 3, 'good': 2, 'ate': 1, 'for': 1, 'i': 1, 'is': 1, 'the': 1})
+```
+
+### Step-By-Step Example (Mac OS X specific): 
 For those using Mac OS X that may be unfamiliar with using a unix terminal, these steps can be followed to simplify the process:
 
-1. Create a spreadsheet of all the utterances you want to analyze and no other information (this can be a copy of another worksheet with everything but the utterances removed)
-2. From the **File** menu, select **Save As**.  Save the file as a **csv** file on your **Desktop**.  For this example, we will say you saved it as `sample_utterances.csv`
-3. Save a copy of `type_token_ratio.py` on your 'Desktop'
-4.  On your Mac, open up 'Launchpad', then choose the 'Utilities' menu, and run the 'Terminal' program (which has an icon similar to a TV screen)
-5. In the screen that opens, type the command `cd`
-6. Type the command `cd Desktop/` and hit `Enter`
-7. Type the command `python type_token_ratio.py sample.csv` and hit 'Enter'
-8. The result are shown in the terminal window.  Additionally a text file containing the results will be created on the desktop with the same file name as the imput but with the extension changed to `.out`.  For this example, the output file will be called `sample.out`
+1. Create a fresh worksheet within a MS Excel spreadsheet of all the utterances you want to analyze and no other information (this can be a copy of another worksheet with everything removed except the utterances you want to analyze).
+2. Use **Save As** to save this current worksheet as a `csv` file.  For this example, we will say you saved it as `sample_utterances.csv`:
+    1. From the **File** menu, select **Save As**.
+    2. Type in the desired file name.
+    3. Select the down arrow next to the file name box to choose to places the file on the **Desktop**.  
+    4. In the **File Format** drop down menu select the **Comma Separated Values (.csv)** option.
+3. Save a copy of `type_token_ratio.py` on your **Desktop**.
+4.  On your Mac, open up **Launchpad**, then choose the **Utilities** menu, and run the **Terminal** program (which has an icon similar to a TV screen).
+5. In the screen that opens, type the command `cd` and press `Enter`.
+6. Type the command `cd Desktop/` and press `Enter`.
+7. Type the command `./type_token_ratio.py sample.csv` and press `Enter`.
+8. The result are shown in the terminal window and the output file, `sample_utterances.out`, will be located on the desktop.  
 
 ##Known Bugs
-1. If the input file extension is `xlsx`, `xls`, `doc`, `docx`, or any other non-text, binary file format, the program will not function properly and the output will not represent the Type-Token Ratio of the language sample.
+1. If the input file extension is `xlsx`, `xls`, `doc`, `docx`, or any other non-text, binary file format, the program will fail to run or the output will not represent the Type-Token Ratio of the language sample.
 
-2. If the a correct path and filename are not provided for both the `type_token_ratio.py` program, and the language sample text file (ie `sample.csv` in the above example), python will output an error similar to one of the two following errors:
+2. If the a correct path and filename are not provided for both the `type_token_ratio.py` program, and the language sample text file (e.g., `sample_utterances.csv` in the above example), on error will be displayed similar to one of the two following errors:
 ```
 python: can't open file 'type_token_ration.py': [Errno 2] No such file or directory
 ```

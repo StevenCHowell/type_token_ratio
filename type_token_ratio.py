@@ -20,11 +20,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Please report any issues on-line at: https://github.com/stvn66/type_token_ratio/issues
 '''
 
+from __future__ import print_function
+
 import collections
 import sys
 import string
+# import nltk
+# w = nltk.word_tokenize(l)  # this splits at all the different punctuation where split does not
 
-print('Copyright (C) 2013 Steven C. Howell\n',
+
+print('')
+print('='*80)
+print(' Copyright (C) 2013 Steven C. Howell\n',
       '\n',
       'This program is free software: you can redistribute it and/or modify\n',
       'it under the terms of the GNU General Public License as published by\n',
@@ -37,11 +44,10 @@ print('Copyright (C) 2013 Steven C. Howell\n',
       'GNU General Public License for more details.\n',
       '\n',
       'You should have received a copy of the GNU General Public License\n',
-      'along with this program.  If not, see <http://www.gnu.org/licenses/>.\n',
+      'along with this program.  If not, see <http://www.gnu.org/licenses/>.',
       )
-
-# import nltk
-# w = nltk.word_tokenize(l)  # this splits at all the different punctuation where split does not
+print('='*80)
+print('')
 
 def checkline():
     global l
@@ -51,9 +57,9 @@ def checkline():
     w = [x.lower() for x in w]   # convert everything to lowercase
     wordcount += len(w)
     if 'words' in globals():     # combine all the lines into one list
-       words += w
+        words += w
     else:
-       words = w
+        words = w
 
 wordcount = 0              # initialize the variable
 f = open(sys.argv[1])      # open the file
@@ -64,36 +70,37 @@ for l in flines:           # for each line
 
 # remove all punctuations #
 for place, item in enumerate(words):
-   for c in string.punctuation:
-       words[place] = words[place].replace(c,'')
+    for c in string.punctuation:
+        words[place] = words[place].replace(c,'')
 
 
-repWords = collections.Counter(words)
+repeated_words = collections.Counter(words)
 uniqueWords = list(set(words))
-print repWords, '\n'
-print 'unique words:    ', uniqueWords, '\n\n'
-print 'total utterances:', linecount
-print 'total words:     ', wordcount
-print 'unique words:    ', len(repWords)
-print 'unique/total:    ', len(repWords)/float(len(words))
+print(repeated_words, '\n')
+print('unique words:    ', uniqueWords, '\n\n')
+print('total utterances:', linecount)
+print('total words:     ', wordcount)
+print('unique words:    ', len(repeated_words))
+print('unique/total:    ', len(repeated_words)/float(len(words)))
 
-textStrings = ['.csv','.tex','.txt']
-writeFile = sys.argv[1]
-for ext, item in enumerate(textStrings):
-    writeFile = writeFile.replace(item, '.out')
-print 'output saved to: ', writeFile
-fw = open(writeFile, 'w')
-s1 = '\n\n' + str(repWords)+'\n'
-s2 = 'total utterances: ' + str(linecount) + '\n'
-s3 = 'total words:      ' + str(wordcount) + '\n'
-s4 = 'unique words:     ' + str(len(repWords))+ '\n'
-s5 = 'Type-Token Ratio: ' + str(len(repWords)/float(len(words)))+ '\n'
+text_extensions = ['.csv','.tex','.txt']
+out_fname = sys.argv[1]
+for ext, item in enumerate(text_extensions):
+    out_fname = out_fname.replace(item, '.out')
+
+with open(out_fname, 'w') as out_file:
+    s1 = '\n\n' + str(repeated_words)+'\n'
+    s2 = 'total utterances: ' + str(linecount) + '\n'
+    s3 = 'total words:      ' + str(wordcount) + '\n'
+    s4 = 'unique words:     ' + str(len(repeated_words))+ '\n'
+    s5 = 'Type-Token Ratio: ' + str(len(repeated_words)/float(len(words)))+ '\n'
 
 
-fw.write(s5 + s2 + s3 + s4)
-for place, word in enumerate(uniqueWords):
-    fw.write(str('%d\t %s\n' % (repWords[word],word)))
-fw.write(s1)
+    out_file.write(s5 + s2 + s3 + s4)
+    for place, word in enumerate(uniqueWords):
+        out_file.write(str('%d\t %s\n' % (repeated_words[word],word)))
+    out_file.write(s1)
+print('output saved to: {}\n'.format(out_fname))
 
 
 
