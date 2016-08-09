@@ -1,0 +1,14 @@
+Type-Token Ratio: 0.7
+total utterances: 3
+total words:      10
+unique words:     7
+1	 ate
+1	 for
+1	 i
+1	 is
+2	 good
+3	 chicken
+1	 the
+
+
+Counter({'chicken': 3, 'good': 2, 'ate': 1, 'for': 1, 'i': 1, 'is': 1, 'the': 1})
