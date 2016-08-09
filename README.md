@@ -84,7 +84,7 @@ For those using Mac OS X that may be unfamiliar with using a unix terminal, thes
 
 2. If the a correct path and filename are not provided for both the `type_token_ratio.py` program, and the language sample text file (e.g., `sample_utterances.csv` in the above example), on error will be displayed similar to one of the two following errors:
 ```
-python: can't open file 'type_token_ration.py': [Errno 2] No such file or directory
+bash: ./type_token_ration.py: No such file or directory
 ```
 or
 ```
