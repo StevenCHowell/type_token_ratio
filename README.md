@@ -10,7 +10,7 @@ To process a speech sample, it must be saved as a text file containing a list of
 ### Input
 The command to calculate the Type-Token Ratio for a word sample saved with the filename `sample_utterances.csv` will be:
 ```
-~/path/to/type_token_ratio.py ~/path/to/sample_utterances.csv
+python ~/path/to/type_token_ratio.py ~/path/to/sample_utterances.csv
 ```
 
 ### Command line output
@@ -78,8 +78,8 @@ For those using Mac OS X that may be unfamiliar with using a unix terminal, thes
 4.  On your Mac, open up **Launchpad**, then choose the **Utilities** menu, and run the **Terminal** program (which has an icon similar to a TV screen).
 5. In the screen that opens, type the command `cd` and press `Enter`.
 6. Type the command `cd Desktop/` and press `Enter`.
-7. Type the command `./type_token_ratio.py sample.csv` and press `Enter`.
-8. The result are shown in the terminal window and the output file, `sample_utterances.out`, will be located on the desktop.  
+7. Type the command `python ./type_token_ratio.py sample.csv` and press `Enter`.
+8. The result are shown in the terminal window and the output file, `sample.out` (same name as the input with `csv` changed to `out`), will be located on the desktop.  
 
 ##Known Bugs
 1. If the input file extension is `xlsx`, `xls`, `doc`, `docx`, or any other non-text, binary file format, the program will fail to run or the output will not represent the Type-Token Ratio of the language sample.
