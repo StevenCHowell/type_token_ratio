@@ -86,7 +86,7 @@ print('unique/total:    ', len(repeated_words)/float(len(words)))
 text_extensions = ['.csv','.tex','.txt']
 out_fname = sys.argv[1]
 for ext, item in enumerate(text_extensions):
-    out_fname = out_fname.replace(item, '.out')
+    out_fname = out_fname.replace(item, '_out.txt')
 
 with open(out_fname, 'w') as out_file:
     s1 = '\n\n' + str(repeated_words)+'\n'
@@ -101,6 +101,3 @@ with open(out_fname, 'w') as out_file:
         out_file.write(str('%d\t %s\n' % (repeated_words[word],word)))
     out_file.write(s1)
 print('output saved to: {}\n'.format(out_fname))
-
-
-
