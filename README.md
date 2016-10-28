@@ -47,7 +47,7 @@ output saved to: sample_utterances.out
 
 ### Output File
 
-Additionally a text file containing the results will be created in the same directory.  The file name for this output file will match the input file but with the extension changed to `.out`.  For this example, the output file will be called `sample_utterances.out`.  The contents of this file will have the following format:
+Additionally a text file containing the results will be created in the same directory.  The file name for this output file will match the input file with `_out` added at the end and the file extension changed to `.txt`.  For this example, the output file will be called `sample_utterances_out.txt`.  The contents of this file will have the following format:
 ```
 Type-Token Ratio: 0.7
 total utterances: 3
@@ -79,7 +79,7 @@ For those using Mac OS X that may be unfamiliar with using a unix terminal, thes
 5. In the screen that opens, type the command `cd` and press `Enter`.
 6. Type the command `cd Desktop/` and press `Enter`.
 7. Type the command `python ./type_token_ratio.py sample.csv` and press `Enter`.
-8. The result are shown in the terminal window and the output file, `sample.out` (same name as the input with `csv` changed to `out`), will be located on the desktop.  
+8. The result are shown in the terminal window and the output file, `sample_out.txt` (same name as the input with `_out` added to the end and `csv` changed to `out`), will be located on the desktop.  
 
 ##Known Bugs
 1. If the input file extension is `xlsx`, `xls`, `doc`, `docx`, or any other non-text, binary file format, the program will fail to run or the output will not represent the Type-Token Ratio of the language sample.
