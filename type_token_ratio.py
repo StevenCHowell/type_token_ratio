@@ -83,7 +83,7 @@ print('total words:     ', wordcount)
 print('unique words:    ', len(repeated_words))
 print('unique/total:    ', len(repeated_words)/float(len(words)))
 
-text_extensions = ['.csv','.tex','.txt']
+text_extensions = ['.txt','.csv','.tex']
 out_fname = sys.argv[1]
 for ext, item in enumerate(text_extensions):
     out_fname = out_fname.replace(item, '_out.txt')
