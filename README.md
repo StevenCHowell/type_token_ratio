@@ -66,7 +66,7 @@ Counter({'chicken': 3, 'good': 2, 'ate': 1, 'for': 1, 'i': 1, 'is': 1, 'the': 1}
 ```
 
 ### Step-By-Step Example (Mac OS X specific):
-For those using Mac OS X who are unfamiliar with using a unix terminal, these steps can be followed to simplify the process.  Please note that the commands must be typed *exactly*, replacing `sample.csv` with the csv file name used in step 2.
+For those using Mac OS X who are unfamiliar with using a unix terminal, these steps can be followed to simplify the process.  Please note that the commands must be typed **exactly**, replacing `sample.csv` with the csv file name used in step 2.
 
 1. Create a fresh worksheet within a MS Excel spreadsheet of all the utterances you want to analyze and no other information (this can be a copy of another worksheet with everything removed except the utterances you want to analyze).
 2. Use **Save As** to save this current worksheet as a `csv` file.  For this example, we will say you saved it as `sample_utterances.csv`:
@@ -82,7 +82,7 @@ For those using Mac OS X who are unfamiliar with using a unix terminal, these st
 8. The result are shown in the terminal window and the output file, `sample_out.txt` (same name as the input with `_out` added to the end and `csv` changed to `txt`), will be located on the desktop.
 
 ### Step-By-Step Example (Windows specific):
-For those using Windows who are unfamiliar with running Python scripts, these steps can be followed to simplify the process.  Please note that the commands must be typed *exactly*, replacing `sample.csv` with the csv file name used in step 4.
+For those using Windows who are unfamiliar with running Python scripts, these steps can be followed to simplify the process.  Please note that the commands must be typed **exactly**, replacing `sample.csv` with the csv file name used in step 4.
 
 1. Download the Anaconda Python Distribution from this webpage: https://www.continuum.io/downloads (it is recommended to select the Python 3.5 64-bit installer)
 2. Install Anaconda Python, following the installation prompts
