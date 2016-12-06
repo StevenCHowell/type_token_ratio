@@ -66,7 +66,7 @@ Counter({'chicken': 3, 'good': 2, 'ate': 1, 'for': 1, 'i': 1, 'is': 1, 'the': 1}
 ```
 
 ### Step-By-Step Example (Mac OS X specific):
-For those using Mac OS X that may be unfamiliar with using a unix terminal, these steps can be followed to simplify the process:
+For those using Mac OS X who are unfamiliar with using a unix terminal, these steps can be followed to simplify the process.  Please note that the commands must be typed exactly, replacing `sample.csv` with the csv file name used in step 2.
 
 1. Create a fresh worksheet within a MS Excel spreadsheet of all the utterances you want to analyze and no other information (this can be a copy of another worksheet with everything removed except the utterances you want to analyze).
 2. Use **Save As** to save this current worksheet as a `csv` file.  For this example, we will say you saved it as `sample_utterances.csv`:
@@ -79,7 +79,30 @@ For those using Mac OS X that may be unfamiliar with using a unix terminal, thes
 5. In the screen that opens, type the command `cd` and press `Enter`.
 6. Type the command `cd Desktop/` and press `Enter`.
 7. Type the command `python ./type_token_ratio.py sample.csv` and press `Enter`.
-8. The result are shown in the terminal window and the output file, `sample_out.txt` (same name as the input with `_out` added to the end and `csv` changed to `out`), will be located on the desktop.
+8. The result are shown in the terminal window and the output file, `sample_out.txt` (same name as the input with `_out` added to the end and `csv` changed to `txt`), will be located on the desktop.
+
+### Step-By-Step Example (Windows specific):
+For those using Windows who are unfamiliar with running Python scripts, these steps can be followed to simplify the process.  Please note that the commands must be typed exactly, replacing `sample.csv` with the csv file name used in step 4.
+
+1. Download the Anaconda Python Distribution from this webpage: https://www.continuum.io/downloads (it is recommended to select the Python 3.5 64-bit installer)
+2. Install Anaconda Python, following the installation prompts
+    - Install for: Just Me (recommended)
+    - Destination Folder: `C:\Users\schowell\Anaconda3
+    - Advanced Options: Yes to all
+    - Installation will proceed for a few minutes
+    - After the installation finishes, select "Next"pwd
+    , unselect "Learn more about Anaconda Cloud", then select "Finish"
+3. Create a fresh worksheet within a MS Excel spreadsheet of all the utterances you want to analyze and no other information (this can be a copy of another worksheet with everything removed except the utterances you want to analyze).
+4. Use **Save As** to save this current worksheet as a `csv` file.  For this example, we will say you saved it as `sample_utterances.csv`:
+    - From the **File** menu, select **Save As**.
+    - Type in the desired file name.
+    - Select the down arrow next to the file name box to choose to places the file on the **Desktop**.
+    - In the **File Format** drop down menu select the **Comma Separated Values (.csv)** option.
+5. Save a copy of [`type_token_ratio.py`](https://raw.githubusercontent.com/stvn66/type_token_ratio/master/type_token_ratio.py) to your **Desktop** (you can download this file by right clicking [here](https://raw.githubusercontent.com/stvn66/type_token_ratio/master/type_token_ratio.py), selecting **save as**, then chosing to save it to the **Desktop**).
+6.  Open a command prompt by opening the **Start Menu** (press windows key), type `cmd`, then press `Enter`.
+8. Type the command `cd Desktop` and press `Enter`.
+9. Type the command `python ./type_token_ratio.py sample.csv` and press `Enter`.
+10. The result are shown in the command prompt window and the output file, `sample_out.txt` (same name as the input with `_out` added to the end and `csv` changed to `txt`), will be located on the desktop.
 
 ##Known Bugs
 1. If the input file extension is `xlsx`, `xls`, `doc`, `docx`, or any other non-text, binary file format, the program will fail to run or the output will not represent the Type-Token Ratio of the language sample.
