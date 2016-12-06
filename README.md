@@ -101,7 +101,7 @@ For those using Windows who are unfamiliar with running Python scripts, these st
 5. Save a copy of [`type_token_ratio.py`](https://raw.githubusercontent.com/stvn66/type_token_ratio/master/type_token_ratio.py) to your **Desktop** (you can download this file by right clicking [here](https://raw.githubusercontent.com/stvn66/type_token_ratio/master/type_token_ratio.py), selecting **save as**, then chosing to save it to the **Desktop**).
 6.  Open a command prompt by opening the **Start Menu** (press windows key), type `cmd`, then press `Enter`.
 8. Type the command `cd Desktop` and press `Enter`.
-9. Type the command `python ./type_token_ratio.py sample.csv` and press `Enter`.
+9. Type the command `python type_token_ratio.py sample.csv` and press `Enter`.
 10. The result are shown in the command prompt window and the output file, `sample_out.txt` (same name as the input with `_out` added to the end and `csv` changed to `txt`), will be located on the desktop.
 
 ##Known Bugs
