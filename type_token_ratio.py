@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 '''
 Calculate the Type-Token Ratio from a speech sample.
 
@@ -28,7 +28,7 @@ import string
 # import nltk
 # w = nltk.word_tokenize(l)  # this splits at all the different punctuation where split does not
 
-
+'''
 print('')
 print('='*80)
 print(' Copyright (C) 2013 Steven C. Howell\n',
@@ -48,7 +48,7 @@ print(' Copyright (C) 2013 Steven C. Howell\n',
       )
 print('='*80)
 print('')
-
+'''
 def checkline():
     global l
     global wordcount
@@ -61,12 +61,15 @@ def checkline():
     else:
         words = w
 
+print(sys.argv)
+
+'''
 wordcount = 0              # initialize the variable
-f = open(sys.argv[1])      # open the file
-flines = f.readlines()     # read in the lines of the file
-linecount = len(flines)    # count the lines
-for l in flines:           # for each line
-    checkline()            # combine the lines and split into words
+with open(sys.argv[1]) as f:      # open the file
+    flines = f.readlines()     # read in the lines of the file
+    linecount = len(flines)    # count the lines
+    for l in flines:           # for each line
+        checkline()            # combine the lines and split into words
 
 # remove all punctuations #
 for place, item in enumerate(words):
@@ -101,3 +104,4 @@ with open(out_fname, 'w') as out_file:
         out_file.write(str('%d\t %s\n' % (repeated_words[word],word)))
     out_file.write(s1)
 print('output saved to: {}\n'.format(out_fname))
+'''
