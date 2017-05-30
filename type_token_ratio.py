@@ -58,7 +58,6 @@ def main(speech_sample):
     out_fname = '{}_out.txt'.format(os.path.splitext(speech_sample)[0])
 
     out_lines = []
-    out_lines.append('output saved to: \n{}\n'.format(out_fname))
     out_lines.append('Type-Token Ratio (U/T):           {:0.4f}\n'.format(ttr))
     out_lines.append('Number of Utterances:             {}\n'.format(n_lines))
     out_lines.append('Total Number of Words (T):        {}\n'.format(n_words))
@@ -78,6 +77,8 @@ def main(speech_sample):
     with open(out_fname, 'w') as out_file:
         for line in out_lines:
             out_file.write(line)
+
+    out_lines = ['output saved to: \n{}\n\n'.format(out_fname)] + out_lines
 
     out_lines.append('='*80)
     out_lines.append(
