@@ -6,7 +6,7 @@
 To process a speech sample, it must be saved as a text file containing a list of utterances.  Two common text file formats are `.csv` and `.txt` and can be created using [MS Excel](https://support.bigcommerce.com/articles/Public/What-is-a-CSV-file-and-how-do-I-save-my-spreadsheet-as-one) or any text editor, such as [TextEdit](http://www.macworld.com/article/3030198/software/hurray-for-textedit-a-secret-powerhouse-of-rich-text.html) on Mac OS X, Microsoft [Notepad](https://en.wikipedia.org/wiki/Microsoft_Notepad) or [WordPad](https://en.wikipedia.org/wiki/WordPad) on Windows, and [gedit](https://wiki.gnome.org/Apps/Gedit) on Linux.
 
 ## Running this program as an application
-A stand-alone MacOS application is available to download [here](https://github.com/StevenCHowell/type_token_ratio/blob/master/mac_app/ttr.zip).  More information regarding its use will follow.
+A stand-alone MacOS application is available.  To download this, right-click [here](https://github.com/StevenCHowell/type_token_ratio/blob/0437ea9eed670a67d8aeeaa6aa685c35a2b83d4e/mac_app/ttr.zip) and select "save as".  More information regarding its use will follow.
 
 ## Running this program from the command line
 ### Input
