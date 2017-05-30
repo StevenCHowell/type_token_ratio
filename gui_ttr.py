@@ -22,6 +22,7 @@ Please report any issues on-line at: https://github.com/stvn66/type_token_ratio/
 
 import subprocess
 from appJar import gui
+import type_token_ratio
 
 def run_ttr(name):
     # select the input the file
@@ -32,11 +33,11 @@ def run_ttr(name):
                         asFile=False)
     app.setLabel('input', 'Speech Sample: {}\n'.format(fname))  # maybe split this
 
-    output = subprocess.run(['./type_token_ratio.py', fname],
-                            stdout=subprocess.PIPE)
+    # output = subprocess.run(['./type_token_ratio.py', fname],
+                            # stdout=subprocess.PIPE)
+    results = type_token_ratio.main(fname)
 
     app.clearTextArea('results', callFunction=False)
-    results = output.stdout.decode('utf-8')
     app.setTextArea('results', '{}'.format(results), callFunction=False)
 
 
