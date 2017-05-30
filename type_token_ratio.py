@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Calculate the Type-Token Ratio from a speech sample.
+Application to calculate the Type-Token Ratio from a speech sample.
 
 Copyright (C) 2013 Steven C. Howell
 
