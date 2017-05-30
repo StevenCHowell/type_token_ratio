@@ -1,0 +1,38 @@
+Type-Token Ratio (U/T):           0.7500
+Number of Utterances:             12
+Total Number of Words (T):        20
+Total Number of Unique Words (U): 15
+
+Unique Words (frequency):
+3	chicken
+3	dinner
+2	good
+1	i
+1	am
+1	awesome
+1	check
+1	out
+1	the
+1	ate
+1	for
+1	there
+1	was
+1	cheese
+1	in
+
+Unique Words (alphabetical):
+1	am
+1	ate
+1	awesome
+1	check
+1	cheese
+3	chicken
+3	dinner
+1	for
+2	good
+1	i
+1	in
+1	out
+1	the
+1	there
+1	was
