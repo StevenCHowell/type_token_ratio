@@ -23,13 +23,72 @@ Please report any issues on-line at: https://github.com/stvn66/type_token_ratio/
 from __future__ import print_function
 
 import collections
+import os
 import sys
 import string
-# import nltk
-# w = nltk.word_tokenize(l)  # this splits at all the different punctuation where split does not
 
-'''
-print('')
+def checkline():
+    global l
+    global n_words
+    global words
+    w = l.split()     #flines[1].split()   # this splits the string at all the white space and makes an array of the words
+    w = [x.lower() for x in w]   # convert everything to lowercase
+    # if 'words' in globals():     # combine all the lines into one list
+    try:
+        words += w
+    except NameError:
+        words = w
+
+with open(sys.argv[1]) as f:      # open the file
+    flines = f.readlines()     # read in the lines of the file
+    n_lines = len(flines)    # count the lines
+    for l in flines:           # for each line
+        checkline()            # combine the lines and split into words
+
+n_words = len(words)
+
+# remove all punctuations
+for i in range(n_words):
+    for c in string.punctuation:
+        words[i] = words[i].replace(c,'')
+
+# count each word
+word_count = collections.Counter(words)
+
+# get the sorted list of unique words
+unique_words = list(word_count.keys())
+unique_words.sort()
+
+n_unique = len(unique_words)
+ttr = len(word_count)/float(len(words))
+
+
+out_fname = '{}_out.txt'.format(os.path.splitext(sys.argv[1])[0])
+print('output saved to: \n{}\n'.format(out_fname))
+
+lines = []
+lines.append('Type-Token Ratio (U/T):           {:0.4f}\n'.format(ttr))
+lines.append('Number of Utterances:             {}\n'.format(n_lines))
+lines.append('Total Number of Words (T):        {}\n'.format(n_words))
+lines.append('Total Number of Unique Words (U): {}\n'.format(n_unique))
+
+lines.append('\nUnique Words (frequency):\n')
+for word, count in word_count.most_common():
+    lines.append('{}\t{}\n'.format(count, word))
+
+lines.append('\nUnique Words (alphabetical):\n')
+for word in unique_words:
+    lines.append('{}\t{}\n'.format(word_count[word], word))
+
+# lines.append('\n\n{}\n'.format(str(word_count)))
+# out_file.write('\n\n' + str(word_count)+'\n')
+
+with open(out_fname, 'w') as out_file:
+    for line in lines:
+        out_file.write(line)
+
+print(''.join(lines))
+
 print('='*80)
 print(' Copyright (C) 2013 Steven C. Howell\n',
       '\n',
@@ -47,61 +106,3 @@ print(' Copyright (C) 2013 Steven C. Howell\n',
       'along with this program.  If not, see <http://www.gnu.org/licenses/>.',
       )
 print('='*80)
-print('')
-'''
-def checkline():
-    global l
-    global wordcount
-    global words
-    w = l.split()     #flines[1].split()   # this splits the string at all the white space and makes an array of the words
-    w = [x.lower() for x in w]   # convert everything to lowercase
-    wordcount += len(w)
-    if 'words' in globals():     # combine all the lines into one list
-        words += w
-    else:
-        words = w
-
-print(sys.argv)
-
-'''
-wordcount = 0              # initialize the variable
-with open(sys.argv[1]) as f:      # open the file
-    flines = f.readlines()     # read in the lines of the file
-    linecount = len(flines)    # count the lines
-    for l in flines:           # for each line
-        checkline()            # combine the lines and split into words
-
-# remove all punctuations #
-for place, item in enumerate(words):
-    for c in string.punctuation:
-        words[place] = words[place].replace(c,'')
-
-
-repeated_words = collections.Counter(words)
-uniqueWords = list(set(words))
-print(repeated_words, '\n')
-print('unique words:    ', uniqueWords, '\n\n')
-print('total utterances:', linecount)
-print('total words:     ', wordcount)
-print('unique words:    ', len(repeated_words))
-print('unique/total:    ', len(repeated_words)/float(len(words)))
-
-text_extensions = ['.txt','.csv','.tex']
-out_fname = sys.argv[1]
-for ext, item in enumerate(text_extensions):
-    out_fname = out_fname.replace(item, '_out.txt')
-
-with open(out_fname, 'w') as out_file:
-    s1 = '\n\n' + str(repeated_words)+'\n'
-    s2 = 'total utterances: ' + str(linecount) + '\n'
-    s3 = 'total words:      ' + str(wordcount) + '\n'
-    s4 = 'unique words:     ' + str(len(repeated_words))+ '\n'
-    s5 = 'Type-Token Ratio: ' + str(len(repeated_words)/float(len(words)))+ '\n'
-
-
-    out_file.write(s5 + s2 + s3 + s4)
-    for place, word in enumerate(uniqueWords):
-        out_file.write(str('%d\t %s\n' % (repeated_words[word],word)))
-    out_file.write(s1)
-print('output saved to: {}\n'.format(out_fname))
-'''
