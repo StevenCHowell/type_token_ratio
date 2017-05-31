@@ -49,7 +49,6 @@ def exit_ttr(name):
 # create the GUI & set a title
 app = gui('Type Token Ratio Calculator')
 
-# display license information
 license = [
     '='*80,
     '\n Copyright (C) 2013 Steven C. Howell\n',
@@ -68,7 +67,6 @@ license = [
     'along with this program.  If not, see <http://www.gnu.org/licenses/>.\n',
     '='*80,
 ]
-# app.infoBox('License', license)
 
 app.addButtons(['Select Speech Sample', 'Exit'], [run_ttr, exit_ttr])
 app.addEmptyLabel('input')

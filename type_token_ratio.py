@@ -87,7 +87,7 @@ def main(speech_sample):
 
     out_lines.append('='*80)
     out_lines.append(
-        ' Copyright (C) 2013 Steven C. Howell\n'
+        '\n Copyright (C) 2013 Steven C. Howell\n'
         '\n'
         'This program is free software: you can redistribute it and/or modify\n'
         'it under the terms of the GNU General Public License as published by\n'
