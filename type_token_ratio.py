@@ -17,7 +17,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-Please report any issues on-line at: https://github.com/stvn66/type_token_ratio/issues
+Please report any issues on-line at:
+https://github.com/StevenCHowell/type_token_ratio/issues
 '''
 
 from __future__ import print_function
@@ -43,6 +44,10 @@ def main(speech_sample):
     for i in range(n_words):
         for c in string.punctuation:
             words[i] = words[i].replace(c,'')
+
+    # remove empty words
+    words = list(filter(None, words))
+    n_words = len(words)
 
     # count each word
     word_count = collections.Counter(words)
