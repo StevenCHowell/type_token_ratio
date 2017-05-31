@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Please report any issues on-line at: https://github.com/stvn66/type_token_ratio/issues
 '''
 
+import datetime
 import subprocess
 from appJar import gui
 import type_token_ratio
@@ -73,7 +74,14 @@ app.addButtons(['Select Speech Sample', 'Exit'], [run_ttr, exit_ttr])
 app.addEmptyLabel('input')
 app.addScrolledTextArea('results')
 app.setTextArea('results', ''.join(license))
-app.addLabel('copyright', 'Copyright (C) 2013 Steven C. Howell')
+
+copyright = 'Copyright (C) 2013 Steven C. Howell'
+version = 'v 0.1.1'
+today = datetime.date.today()
+build = 'updated on {}'.format(today.strftime('%d %b %Y'))
+
+app.addLabel('copyright', '{}   -   {}   -   {}'.format(copyright, version,
+                                                        build))
 app.setGeometry(670, 300)
 
 app.go()
