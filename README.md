@@ -1,7 +1,7 @@
 # Type-Token Ratio
 
 ## Introduction
-`type_token_ratio.py` is an program designed to calculate the Type-Token Ratio from speech sample.  More information about the Type-Token Ratio can be obtained by searching the [ASHA web-site](http://search.asha.org/default.aspx?q=type%20token%20ratio) using the term "type token ratio".
+`type_token_ratio.py` is a program designed to calculate the Type-Token Ratio from speech sample.  More information about the Type-Token Ratio can be obtained by searching the [ASHA web-site](http://search.asha.org/default.aspx?q=type%20token%20ratio) using the term "type token ratio".
 
 To process a speech sample, it must be saved as a text file containing a list of utterances.  Two common text file formats are `.csv` and `.txt` and can be created using [MS Excel](https://support.bigcommerce.com/articles/Public/What-is-a-CSV-file-and-how-do-I-save-my-spreadsheet-as-one) or any text editor, such as [TextEdit](http://www.macworld.com/article/3030198/software/hurray-for-textedit-a-secret-powerhouse-of-rich-text.html) on Mac OS X, Microsoft [Notepad](https://en.wikipedia.org/wiki/Microsoft_Notepad) or [WordPad](https://en.wikipedia.org/wiki/WordPad) on Windows, and [gedit](https://wiki.gnome.org/Apps/Gedit) on Linux.
 
