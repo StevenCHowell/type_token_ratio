@@ -106,7 +106,8 @@ For those using Windows who are unfamiliar with running Python scripts, these st
 9. Type the command `python type_token_ratio.py sample.csv` and press `Enter`.
 10. The result are shown in the command prompt window and the output file, `sample_out.txt` (same name as the input with `_out` added to the end and `csv` changed to `txt`), will be located on the desktop.
 
-##Known Bugs
+## Known Bugs
+
 1. If the input file extension is `xlsx`, `xls`, `doc`, `docx`, or any other non-text, binary file format, the program will fail to run or the output will not represent the Type-Token Ratio of the language sample.
 
 2. If the a correct path and filename are not provided for both the `type_token_ratio.py` program, and the language sample text file (e.g., `sample_utterances.csv` in the above example), on error will be displayed similar to one of the two following errors:
